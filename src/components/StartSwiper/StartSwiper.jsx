@@ -28,15 +28,12 @@ const StartSwiper = () => {
         spaceBetween={50}
         slidesPerView={1}
         pagination
+        allowTouchMove={false}
         onReachEnd={() => setIsLastSlide(true)}
-        onActiveIndexChange={(swiper) => {
-          if (swiper.activeIndex === swiper.slides.length) setIsLastSlide(true);
-        }}
+        // onActiveIndexChange={(swiper) => {
+        //   if (swiper.activeIndex === swiper.slides.length) setIsLastSlide(true);
+        // }}
       >
-        {/* {isLastSlide ? null : (
-          <SwiperButtonSkip slot="container-start">Пропустить</SwiperButtonSkip>
-        )} */}
-
         <SwiperButtonSkip slot="container-start">
           {isLastSlide ? "" : "Пропустить"}
         </SwiperButtonSkip>
