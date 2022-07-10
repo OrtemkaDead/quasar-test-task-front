@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+@import '../../mixins.scss';
+
+.swiper {
+  &-pagination {
+    width: 100px !important;
+    margin: 25px auto !important; 
+    @include flexible(inherit, space-around, row);
+
+    position: static !important;
+
+    &-bullet {
+      width: 6px; height: 6px !important;
+  
+      border-radius: 200px !important;
+      opacity: 1 !important;
+      background-color: $clr-blue !important;
+
+      &-active {
+        width: 24px !important;
+      }
+    }
+  }
+}

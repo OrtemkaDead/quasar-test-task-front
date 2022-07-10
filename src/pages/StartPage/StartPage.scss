@@ -3,21 +3,20 @@
 
 .start {
   .container {
-    @include flexible(flex-end);
-  }
-  
-  &__skip-link {
-    color: $clr-blue;
-    font-weight: 500;
+    display: flex;
+    align-items: flex-end;
   }
 
-  &__content {
-    margin: 30px 0;
+  &__swiper {
+    width: 100%;
+    //todo ХЗ правильно это или нет
+    min-height: 100vh;
+    @include flexible(inherit, space-between);
   }
 
   &__img {
     @include flexible(inherit, center, inherit);
-    margin-bottom: 40px;
+    margin-bottom: 55px;
     
     img {
       max-width: 100%;
@@ -26,34 +25,7 @@
     }
   }
 
-  &-nav {
-    width: 100px;
-    margin: 0 auto 25px; 
-    @include flexible(inherit, space-around, row);
-
-    &__item {
-      width: 6px; height: 6px;
-
-      background-color: $clr-blue;
-      border-radius: 200px;
-
-      &--active {
-        width: 24px;
-      }
-    }
-  }
-
   &__text {
     line-height: 24px;
-  }
-
-  &__btn {
-    width: 100%;
-    padding: 15px 0;
-    
-    color: #fff;
-
-    border-radius: 8px;
-    background-color: $clr-blue;
   }
 }
