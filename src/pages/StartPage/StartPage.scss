@@ -10,7 +10,7 @@
   &__swiper {
     width: 100%;
     //todo ХЗ правильно это или нет
-    min-height: 100vh;
+    // min-height: 100vh;
     @include flexible(inherit, space-between);
   }
 

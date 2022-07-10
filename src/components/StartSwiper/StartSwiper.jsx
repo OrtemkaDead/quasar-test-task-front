@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Styles
 import "./StartSwiper.scss";
@@ -17,6 +17,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const StartSwiper = () => {
+  const [isLastSlide, setIsLastSlide] = useState(false);
+
   return (
     <div className="container">
       <Swiper
@@ -25,9 +27,19 @@ const StartSwiper = () => {
         modules={[Pagination, A11y]}
         spaceBetween={50}
         slidesPerView={1}
-        pagination={{ clickable: true }}
+        pagination
+        onReachEnd={() => setIsLastSlide(true)}
+        onActiveIndexChange={(swiper) => {
+          if (swiper.activeIndex === swiper.slides.length) setIsLastSlide(true);
+        }}
       >
-        <SwiperButtonSkip slot="container-start">Пропустить</SwiperButtonSkip>
+        {/* {isLastSlide ? null : (
+          <SwiperButtonSkip slot="container-start">Пропустить</SwiperButtonSkip>
+        )} */}
+
+        <SwiperButtonSkip slot="container-start">
+          {isLastSlide ? "" : "Пропустить"}
+        </SwiperButtonSkip>
 
         <SwiperSlide>
           <StartContent />
@@ -42,7 +54,9 @@ const StartSwiper = () => {
           <StartContent />
         </SwiperSlide>
 
-        <SwiperButtonNext>Продолжить</SwiperButtonNext>
+        <SwiperButtonNext>
+          {isLastSlide ? "Начать пользоваться" : "Продолжить"}
+        </SwiperButtonNext>
       </Swiper>
     </div>
   );
