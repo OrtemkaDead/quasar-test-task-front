@@ -1,0 +1,16 @@
+.onboarding-content {
+  &__img {
+    @include flexible(inherit, center, inherit);
+    margin-bottom: 100px;
+    
+    img {
+      max-width: 100%;
+
+      border-radius: 20px;
+    }
+  }
+
+  &__text {
+    line-height: 24px;
+  }
+}

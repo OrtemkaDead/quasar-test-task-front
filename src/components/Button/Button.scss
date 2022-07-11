@@ -1,0 +1,19 @@
+
+.button {
+  font-size: 16px;
+  font-weight: 500;
+  color: $clr-blue;
+
+  background: inherit;
+
+  &--big {
+    width: 100%;
+    padding: 15px 0;
+    
+    color: #fff;
+
+    border-radius: 8px;
+    background-color: $clr-blue;
+  }
+  
+}

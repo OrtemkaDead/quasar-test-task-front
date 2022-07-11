@@ -1,0 +1,21 @@
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__header {
+    width: 100%; height: 64px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    // height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 3;
+  }
+}

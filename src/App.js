@@ -1,9 +1,9 @@
 import React from "react";
 
 // Pages
-import LoadingPage from "./pages/LoadingPage";
-import StartPage from "./pages/StartPage";
-import AuthPage from "./pages/AuthPage";
+import LoadingPage from "@Pages/LoadingPage";
+import OnboardingPage from "@Pages/OnboardingPage";
+import AuthPage from "@Pages/AuthPage";
 
 // Components
 
@@ -13,7 +13,7 @@ import "./app.scss";
 function App() {
   return (
     <div className="App">
-      <StartPage />
+      <AuthPage />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.swiper {
+  &-pagination {
+    //todo 400px = высота картинки + 55px по макету
+    top: 455px !important;
+    bottom: 0 !important;
+
+    &-bullet {
+      width: 6px; height: 6px !important;
+      margin: 0 8px !important;
+  
+      border-radius: 200px !important;
+      opacity: .8 !important;
+      background-color: $clr-blue !important;
+      transition: all .2s linear;
+
+      &-active {
+        width: 24px !important;
+
+        opacity: 1 !important;
+      }
+    }
+  }
+}

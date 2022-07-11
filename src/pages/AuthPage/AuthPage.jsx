@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+// Components
+import PageLayout from "../../layouts/PageLayout";
+import Button from "@Components/Button";
+
 // Images
 import plus from "../../images/plus.svg";
 import check from "../../images/check.svg";
@@ -14,18 +18,20 @@ const AuthPage = () => {
   let [userImg, setUserImg] = useState(user);
 
   return (
-    <div className="auth-page auth">
-      <div className="auth__top-bar auth-top-bar">
-        <button className="auth-top-bar__btn">
-          <img src={plus} />
-        </button>
-        <span className="auth-top-bar__text">Создание профиля</span>
-        <button className="auth-top-bar__btn" type="submit">
-          <img src={check} />
-        </button>
-      </div>
-
-      <div className="container">
+    <PageLayout
+      classNameHeader="auth__header"
+      headerSlot={
+        <>
+          <Button>
+            <img src={plus} />
+          </Button>
+          <span>Создание профиля</span>
+          <Button>
+            <img src={check} />
+          </Button>
+        </>
+      }
+      contentSlot={
         <div className="auth__forms auth-forms">
           <div className="auth-forms__user-img">
             <img src={userImg} />
@@ -44,7 +50,7 @@ const AuthPage = () => {
                 type="radio"
                 name="sex"
                 value="men"
-                onChange={() => setUserImg((userImg = userMan))}
+                onChange={() => setUserImg(userMan)}
               />
               <span>Мужчина</span>
             </label>
@@ -55,7 +61,7 @@ const AuthPage = () => {
                 type="radio"
                 name="sex"
                 value="women"
-                onChange={() => setUserImg((userImg = userWoman))}
+                onChange={() => setUserImg(userWoman)}
               />
               <span>Женщина</span>
             </label>
@@ -72,8 +78,8 @@ const AuthPage = () => {
             maxLength="11"
           />
         </div>
-      </div>
-    </div>
+      }
+    />
   );
 };
 

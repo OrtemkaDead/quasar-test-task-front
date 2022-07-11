@@ -1,0 +1,14 @@
+.onboarding {
+
+  &__header {
+    justify-content: end;
+    align-items: flex-end;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 3;
+  }
+}
