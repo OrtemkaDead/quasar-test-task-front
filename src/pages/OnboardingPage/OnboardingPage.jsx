@@ -11,7 +11,7 @@ import "./OnboardingPage.scss";
 
 const OnboardingPage = () => {
   const [isLastSlide, setIsLastSlide] = useState(false);
-  const swiperEl = useRef(null);
+  const swiperRef = useRef(null);
 
   return (
     <PageLayout
@@ -19,8 +19,8 @@ const OnboardingPage = () => {
       headerSlot={
         <Button
           onClick={() =>
-            swiperEl.current.swiper.slideTo(
-              swiperEl.current.swiper.slides.length - 1
+            swiperRef.current.swiper.slideTo(
+              swiperRef.current.swiper.slides.length - 1
             )
           }
         >
@@ -31,7 +31,7 @@ const OnboardingPage = () => {
         <div className="onboarding__content">
           <div className="onboarding__swiper-wrap">
             <OnboardingSwiper
-              swiperEl={swiperEl}
+              swiperRef={swiperRef}
               setIsLastSlide={setIsLastSlide}
             />
           </div>
@@ -39,8 +39,8 @@ const OnboardingPage = () => {
           <Button
             type={BTN__BIG}
             onClick={() =>
-              swiperEl.current.swiper.slideTo(
-                swiperEl.current.swiper.activeIndex + 1
+              swiperRef.current.swiper.slideTo(
+                swiperRef.current.swiper.activeIndex + 1
               )
             }
           >
