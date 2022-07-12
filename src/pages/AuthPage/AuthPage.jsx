@@ -16,6 +16,7 @@ import "./AuthPage.scss";
 
 const AuthPage = () => {
   const [userImg, setUserImg] = useState(user);
+  const [telValue, setTelValue] = useState("");
   const dateEl = useRef(null);
 
   return (
@@ -92,6 +93,9 @@ const AuthPage = () => {
             type="tel"
             placeholder="Укажите номер телефона"
             maxLength="11"
+            value={telValue}
+            onInput={(e) => setTelValue(e.target.value)}
+            onBlur={() => console.log(/^\d+$/.test(telValue))}
           />
         </div>
       }
