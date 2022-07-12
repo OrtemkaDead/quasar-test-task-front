@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/quasar-test-task-front/static/css/main.768244a6.css",
+    "main.js": "/quasar-test-task-front/static/js/main.359f0a78.js",
+    "static/media/image-1.png": "/quasar-test-task-front/static/media/image-1.84e8f641605d5059fc86.png",
+    "static/media/image-3.png": "/quasar-test-task-front/static/media/image-3.0436832aa2e0f2bffc20.png",
+    "static/media/image-2.png": "/quasar-test-task-front/static/media/image-2.7161b0f35cfc573a1e0c.png",
+    "static/media/image-4.png": "/quasar-test-task-front/static/media/image-4.c1755413899deb423c6e.png",
+    "static/media/Golos-Text_Medium.ttf": "/quasar-test-task-front/static/media/Golos-Text_Medium.3b4d13cddd570d1baa95.ttf",
+    "static/media/Golos-Text_Regular.ttf": "/quasar-test-task-front/static/media/Golos-Text_Regular.5d7bc563bd99aa608d23.ttf",
+    "static/media/user-man.png": "/quasar-test-task-front/static/media/user-man.ba3e9327f074cac4e49e.png",
+    "static/media/user.png": "/quasar-test-task-front/static/media/user.0d14c6999b4a5c8e86a7.png",
+    "static/media/user-woman.svg": "/quasar-test-task-front/static/media/user-woman.f43848e2df684d50ae2c804c6e43971d.svg",
+    "static/media/logo.svg": "/quasar-test-task-front/static/media/logo.6e2f4be50cec35ce52e8200a15438653.svg",
+    "index.html": "/quasar-test-task-front/index.html",
+    "static/media/plus.svg": "/quasar-test-task-front/static/media/plus.13045737323ac13a863e883e743df849.svg",
+    "static/media/check.svg": "/quasar-test-task-front/static/media/check.e60aec14a961100c28d7bf57959b5b73.svg",
+    "main.768244a6.css.map": "/quasar-test-task-front/static/css/main.768244a6.css.map",
+    "main.359f0a78.js.map": "/quasar-test-task-front/static/js/main.359f0a78.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.768244a6.css",
+    "static/js/main.359f0a78.js"
+  ]
+}
