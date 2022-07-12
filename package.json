@@ -2,6 +2,7 @@
   "name": "react-start",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://OrtemkaDead.github.io/",
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@testing-library/jest-dom": "^5.16.4",
@@ -21,7 +22,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "webpack": "^5.73.0"
