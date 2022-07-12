@@ -4,7 +4,7 @@ module.exports = {
   style: {
     sass: {
       loaderOptions: {
-        additionalData: '@import "@Assets/main.scss";',
+        additionalData: '@import "@Assets/styles/main.scss";',
       },
     },
   },
@@ -13,6 +13,7 @@ module.exports = {
       "@Assets": path.resolve(__dirname, "src/assets/"),
       "@Components": path.resolve(__dirname, "src/components/"),
       "@Pages": path.resolve(__dirname, "src/pages/"),
+      "@Layouts": path.resolve(__dirname, "src/layouts/"),
     },
   },
 };

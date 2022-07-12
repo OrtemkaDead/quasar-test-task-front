@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // Components
-import PageLayout from "../../layouts/PageLayout";
+import PageLayout from "@Layouts/PageLayout";
 import Button from "@Components/Button";
 
 // Images
-import plus from "../../images/plus.svg";
-import check from "../../images/check.svg";
-import user from "../../images/user.png";
-import userWoman from "../../images/user-woman.svg";
-import userMan from "../../images/user-man.png";
+import plus from "@Assets/images/plus.svg";
+import check from "@Assets/images/check.svg";
+import user from "@Assets/images/user.png";
+import userWoman from "@Assets/images/user-woman.svg";
+import userMan from "@Assets/images/user-man.png";
 
 // Styles
 import "./AuthPage.scss";
 
 const AuthPage = () => {
-  let [userImg, setUserImg] = useState(user);
+  const [userImg, setUserImg] = useState(user);
+  const dateEl = useRef(null);
 
   return (
     <PageLayout
@@ -33,20 +34,21 @@ const AuthPage = () => {
       }
       contentSlot={
         <div className="auth__forms auth-forms">
-          <div className="auth-forms__user-img">
+          <div className="auth-forms__img">
             <img src={userImg} />
           </div>
 
           <input
-            className="auth-forms__input auth-forms__user-name"
+            className="auth-forms__item"
             type="text"
             placeholder="Введите имя"
+            maxLength={40}
           />
 
-          <div className="auth-forms__user-genders">
-            <label className="auth-forms__user-gender">
+          <div className="auth-forms__label">
+            <label className="auth-forms__gender">
               <input
-                className="auth-forms__input--radio"
+                className="auth-forms__item--radio"
                 type="radio"
                 name="sex"
                 value="men"
@@ -55,9 +57,9 @@ const AuthPage = () => {
               <span>Мужчина</span>
             </label>
 
-            <label className="auth-forms__user-gender">
+            <label className="auth-forms__gender">
               <input
-                className="auth-forms__input--radio"
+                className="auth-forms__item--radio"
                 type="radio"
                 name="sex"
                 value="women"
@@ -67,12 +69,26 @@ const AuthPage = () => {
             </label>
           </div>
 
+          <label className="auth-forms__label">
+            <button
+              className="auth-forms__item auth-forms__item--button"
+              onClick={() => {
+                dateEl.current.click();
+                dateEl.current.className += " active";
+              }}
+            >
+              Выберите дату рождения
+            </button>
+
+            <input
+              className="auth-forms__item auth-forms__item--date"
+              type="date"
+              ref={dateEl}
+            />
+          </label>
+
           <input
-            className="auth-forms__input auth-forms__user-birthday"
-            type="date"
-          />
-          <input
-            className="auth-forms__input auth-forms__user-phone"
+            className="auth-forms__item"
             type="tel"
             placeholder="Укажите номер телефона"
             maxLength="11"

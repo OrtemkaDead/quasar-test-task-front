@@ -4,7 +4,7 @@ import React from "react";
 import "./OnboardingContent.scss";
 
 // Images
-import image1 from "../../images/image-1.png";
+import image1 from "@Assets/images/image-1.png";
 
 const OnboardingContent = ({ children, imageUrl }) => {
   return (

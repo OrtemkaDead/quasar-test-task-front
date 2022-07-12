@@ -12,7 +12,7 @@
   }
 
   &-forms {
-    &__user-img {
+    &__img {
       margin-bottom: 30px;
       @include flexible(center, center, row);
 
@@ -23,9 +23,8 @@
       }
     }
 
-    &__input {
+    &__item {
       width: 100%;
-      //55px для даты
       padding: 12px 16px;
       margin-bottom: 20px;
 
@@ -34,18 +33,43 @@
       border: 1px solid #C9C9C9;
       border-radius: 8px;
 
+      &--button {
+        
+        text-align: left;
+
+        background: inherit;
+      }
+
       &--radio {
         width: 22px; height: 22px;
         margin-right: 10px;
       }
+
+      &--date {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 55px;
+        opacity: 0;
+
+        transition: all .3s linear;
+
+        &.active {
+          width: 100%;
+          opacity: 1;
+        }
+      }
     }
 
-    &__user-genders {
-      margin-bottom: 25px;
+    &__label {
       display: flex;
+      position: relative;
     }
 
-    &__user-gender {
+    &__gender {
+      margin-bottom: 25px;
       @include flexible(center, flex-start, row);
 
       &:first-child {

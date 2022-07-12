@@ -4,28 +4,32 @@ import React from "react";
 import "./OnboardingSwiper.scss";
 
 // Images
-import image1 from "../../images/image-1.png";
-import image2 from "../../images/image-2.png";
-import image3 from "../../images/image-3.png";
-import image4 from "../../images/image-4.png";
+import image1 from "@Assets/images/image-1.png";
+import image2 from "@Assets/images/image-2.png";
+import image3 from "@Assets/images/image-3.png";
+import image4 from "@Assets/images/image-4.png";
 
 // Components
-import OnboardingContent from "../OnboardingContent";
+import OnboardingContent from "@Components/OnboardingContent";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y } from "swiper";
+// import { EffectFade } from "swiper";
 
 // Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/scss";
+import "swiper/scss/pagination";
+// import "swiper/scss/effect-fade";
 
-const OnboardingSwiper = ({ setIsLastSlide }) => {
+const OnboardingSwiper = ({ swiperEl, setIsLastSlide }) => {
   return (
     <Swiper
       className="onboarding__swiper"
+      ref={swiperEl}
       // install Swiper modules
       modules={[Pagination, A11y]}
+      // effect="fade"
       spaceBetween={100}
       slidesPerView={1}
       pagination
