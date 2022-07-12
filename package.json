@@ -2,7 +2,7 @@
   "name": "react-start",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://OrtemkaDead.github.io/",
+  "homepage": "http://OrtemkaDead.github.io/quasar-test-task-front",
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@testing-library/jest-dom": "^5.16.4",
