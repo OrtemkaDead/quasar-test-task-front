@@ -19,6 +19,10 @@ const AuthPage = () => {
   const [phoneValue, setPhoneValue] = useState("");
   const birthdayInput = useRef(null);
 
+  const phoneValidator = () => {
+    return /^\d+$/.test(phoneValue);
+  };
+
   return (
     <PageLayout
       classNameHeader="auth__header"
@@ -95,7 +99,7 @@ const AuthPage = () => {
             maxLength="11"
             value={phoneValue}
             onInput={(e) => setPhoneValue(e.target.value)}
-            onBlur={() => console.log(/^\d+$/.test(phoneValue))}
+            onBlur={() => console.log(phoneValidator())}
           />
         </div>
       }
