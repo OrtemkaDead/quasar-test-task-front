@@ -54,7 +54,10 @@
         width: 55px;
         opacity: 0;
 
+        background-color: #fff;
         transition: all .3s linear;
+
+        -webkit-appearance: none;
 
         &.active {
           width: 100%;

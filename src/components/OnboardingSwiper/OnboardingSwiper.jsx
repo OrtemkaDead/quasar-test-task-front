@@ -22,11 +22,11 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 // import "swiper/scss/effect-fade";
 
-const OnboardingSwiper = ({ swiperEl, setIsLastSlide }) => {
+const OnboardingSwiper = ({ swiperRef, setIsLastSlide }) => {
   return (
     <Swiper
       className="onboarding__swiper"
-      ref={swiperEl}
+      ref={swiperRef}
       // install Swiper modules
       modules={[Pagination, A11y]}
       // effect="fade"

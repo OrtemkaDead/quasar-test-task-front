@@ -16,8 +16,8 @@ import "./AuthPage.scss";
 
 const AuthPage = () => {
   const [userImg, setUserImg] = useState(user);
-  const [telValue, setTelValue] = useState("");
-  const dateEl = useRef(null);
+  const [phoneValue, setPhoneValue] = useState("");
+  const birthdayInput = useRef(null);
 
   return (
     <PageLayout
@@ -74,8 +74,8 @@ const AuthPage = () => {
             <button
               className="auth-forms__item auth-forms__item--button"
               onClick={() => {
-                dateEl.current.click();
-                dateEl.current.className += " active";
+                birthdayInput.current.click();
+                birthdayInput.current.className += " active";
               }}
             >
               Выберите дату рождения
@@ -84,7 +84,7 @@ const AuthPage = () => {
             <input
               className="auth-forms__item auth-forms__item--date"
               type="date"
-              ref={dateEl}
+              ref={birthdayInput}
             />
           </label>
 
@@ -93,9 +93,9 @@ const AuthPage = () => {
             type="tel"
             placeholder="Укажите номер телефона"
             maxLength="11"
-            value={telValue}
-            onInput={(e) => setTelValue(e.target.value)}
-            onBlur={() => console.log(/^\d+$/.test(telValue))}
+            value={phoneValue}
+            onInput={(e) => setPhoneValue(e.target.value)}
+            onBlur={() => console.log(/^\d+$/.test(phoneValue))}
           />
         </div>
       }
