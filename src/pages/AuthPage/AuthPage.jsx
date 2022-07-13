@@ -16,11 +16,29 @@ import "./AuthPage.scss";
 
 const AuthPage = () => {
   const [userImg, setUserImg] = useState(user);
-  const [phoneValue, setPhoneValue] = useState("");
   const birthdayInput = useRef(null);
 
-  const phoneValidator = () => {
-    return /^\d+$/.test(phoneValue);
+  const phoneValidator = (e) => {
+    let x = e.target.value
+      .replace(/\D/g, "")
+      .match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+
+    e.target.value = !x[2]
+      ? x[1]
+      : "(" +
+        x[1] +
+        ")" +
+        x[2] +
+        (x[3] ? "-" + x[3] : "") +
+        (x[4] ? "-" + x[4] : "");
+  };
+
+  const dateValidator = (value) => {
+    let year = value.split("-")[0];
+
+    year <= 1860 || year >= new Date().getFullYear()
+      ? console.log("not valid")
+      : console.log("valid");
   };
 
   return (
@@ -89,6 +107,7 @@ const AuthPage = () => {
               className="auth-forms__item auth-forms__item--date"
               type="date"
               ref={birthdayInput}
+              onBlur={() => dateValidator(birthdayInput.current.value)}
             />
           </label>
 
@@ -96,10 +115,7 @@ const AuthPage = () => {
             className="auth-forms__item"
             type="tel"
             placeholder="Укажите номер телефона"
-            maxLength="11"
-            value={phoneValue}
-            onInput={(e) => setPhoneValue(e.target.value)}
-            onBlur={() => console.log(phoneValidator())}
+            onInput={(e) => phoneValidator(e)}
           />
         </div>
       }
