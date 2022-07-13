@@ -15,4 +15,9 @@
   &__button {
     padding: 0 20px;
   }
+
+  &__link {
+    height: 100%;
+    @include flexible(center, center, row);
+  }
 }

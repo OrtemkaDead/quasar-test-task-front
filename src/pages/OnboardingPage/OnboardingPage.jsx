@@ -47,7 +47,9 @@ const OnboardingPage = () => {
               }
             >
               {isLastSlide ? (
-                <Link to="/auth">Начать пользоваться</Link>
+                <Link className="onboarding__link" to="/auth">
+                  Начать пользоваться
+                </Link>
               ) : (
                 "Продолжить"
               )}
