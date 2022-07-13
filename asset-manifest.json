@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quasar-test-task-front/static/css/main.768244a6.css",
-    "main.js": "/quasar-test-task-front/static/js/main.02dbfe36.js",
+    "main.css": "/quasar-test-task-front/static/css/main.d055ff60.css",
+    "main.js": "/quasar-test-task-front/static/js/main.bc56416b.js",
     "static/media/image-1.png": "/quasar-test-task-front/static/media/image-1.84e8f641605d5059fc86.png",
     "static/media/image-3.png": "/quasar-test-task-front/static/media/image-3.0436832aa2e0f2bffc20.png",
     "static/media/image-2.png": "/quasar-test-task-front/static/media/image-2.7161b0f35cfc573a1e0c.png",
@@ -15,11 +15,11 @@
     "index.html": "/quasar-test-task-front/index.html",
     "static/media/plus.svg": "/quasar-test-task-front/static/media/plus.13045737323ac13a863e883e743df849.svg",
     "static/media/check.svg": "/quasar-test-task-front/static/media/check.e60aec14a961100c28d7bf57959b5b73.svg",
-    "main.768244a6.css.map": "/quasar-test-task-front/static/css/main.768244a6.css.map",
-    "main.02dbfe36.js.map": "/quasar-test-task-front/static/js/main.02dbfe36.js.map"
+    "main.d055ff60.css.map": "/quasar-test-task-front/static/css/main.d055ff60.css.map",
+    "main.bc56416b.js.map": "/quasar-test-task-front/static/js/main.bc56416b.js.map"
   },
   "entrypoints": [
-    "static/css/main.768244a6.css",
-    "static/js/main.02dbfe36.js"
+    "static/css/main.d055ff60.css",
+    "static/js/main.bc56416b.js"
   ]
 }
