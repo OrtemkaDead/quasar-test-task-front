@@ -1,4 +1,6 @@
 .onboarding-content {
+  padding: 0 20px;
+  
   &__img {
     @include flexible(inherit, center, inherit);
     margin-bottom: 100px;

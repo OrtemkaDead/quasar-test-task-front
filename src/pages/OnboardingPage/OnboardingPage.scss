@@ -5,9 +5,14 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    flex-grow: 3;
+
+    &.container {
+      padding: 20px 0;
+    }
+  }
+
+  &__button {
+    padding: 0 20px;
   }
 }
