@@ -63,6 +63,14 @@
           width: 100%;
           opacity: 1;
         }
+
+        &.danger {
+          border-color: red;
+        }
+
+        &.succsess {
+          border-color: green;
+        }
       }
     }
 

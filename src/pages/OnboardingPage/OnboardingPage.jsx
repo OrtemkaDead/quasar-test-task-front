@@ -16,6 +16,7 @@ const OnboardingPage = () => {
   return (
     <PageLayout
       classNameHeader={"onboarding__header"}
+      classNameContent={"onboarding__content"}
       headerSlot={
         <Button
           onClick={() =>
@@ -28,7 +29,7 @@ const OnboardingPage = () => {
         </Button>
       }
       contentSlot={
-        <div className="onboarding__content">
+        <>
           <div className="onboarding__swiper-wrap">
             <OnboardingSwiper
               swiperRef={swiperRef}
@@ -36,21 +37,25 @@ const OnboardingPage = () => {
             />
           </div>
 
-          <Button
-            type={BTN__BIG}
-            onClick={() =>
-              swiperRef.current.swiper.slideTo(
-                swiperRef.current.swiper.activeIndex + 1
-              )
-            }
-          >
-            {isLastSlide ? (
-              <Link to="/auth">Начать пользоваться</Link>
-            ) : (
-              "Продолжить"
-            )}
-          </Button>
-        </div>
+          <div className="onboarding__button">
+            <Button
+              type={BTN__BIG}
+              onClick={() =>
+                swiperRef.current.swiper.slideTo(
+                  swiperRef.current.swiper.activeIndex + 1
+                )
+              }
+            >
+              {isLastSlide ? (
+                <Link className="onboarding__link" to="/auth">
+                  Начать пользоваться
+                </Link>
+              ) : (
+                "Продолжить"
+              )}
+            </Button>
+          </div>
+        </>
       }
     />
   );

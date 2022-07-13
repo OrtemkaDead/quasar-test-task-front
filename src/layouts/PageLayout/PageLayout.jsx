@@ -3,14 +3,26 @@ import React from "react";
 // Styles
 import "./PageLayout.scss";
 
-const PageLayout = ({ classNameHeader, headerSlot, contentSlot }) => {
+let classNames = require("classnames");
+
+const PageLayout = ({
+  classNameHeader,
+  classNameContent,
+  headerSlot,
+  contentSlot,
+}) => {
+  let headerClass = classNames("page-layout__header", classNameHeader);
+  let contentClass = classNames(
+    "page-layout__content",
+    "container",
+    classNameContent
+  );
+
   return (
     <div className="page-layout">
-      <header className={["page-layout__header", classNameHeader].join(" ")}>
-        {headerSlot}
-      </header>
+      <header className={headerClass}>{headerSlot}</header>
 
-      <div className="page-layout__content container">{contentSlot}</div>
+      <div className={contentClass}>{contentSlot}</div>
     </div>
   );
 };
