@@ -23,6 +23,30 @@ const AuthPage = () => {
     return /^\d+$/.test(phoneValue);
   };
 
+  function validate_date(value) {
+    console.log(value);
+    let arrD = value.split(".");
+    arrD[1] -= 1;
+    let d = new Date(arrD[2], arrD[1], arrD[0]);
+    if (
+      d.getFullYear() == arrD[2] &&
+      d.getMonth() == arrD[1] &&
+      d.getDate() == arrD[0]
+    ) {
+      return true;
+    } else {
+      alert("Введена некорректная дата!");
+      return false;
+    }
+  }
+
+  function isValidDate(value) {
+    let arrD = value.split(".");
+    arrD[1] -= 1;
+    let d = new Date(arrD[2], arrD[1], arrD[0]);
+    return Y == d.getFullYear() && M == d.getMonth() && D == d.getDate();
+  }
+
   return (
     <PageLayout
       classNameHeader="auth__header"
@@ -89,6 +113,8 @@ const AuthPage = () => {
               className="auth-forms__item auth-forms__item--date"
               type="date"
               ref={birthdayInput}
+              // onBlur={() => console.log(birthdayInput.current?.value)}
+              onBlur={(e) => validate_date(e.target.value)}
             />
           </label>
 
