@@ -17,21 +17,51 @@ import "./AuthPage.scss";
 // Scripts
 import phoneValidator from "@Utils/validators/phoneValidator";
 import dateValidator from "@Utils/validators/dateValidator";
+import nameValidator from "@Utils/validators/nameValidator";
 
 let classNames = require("classnames");
 
 const AuthPage = () => {
   const [userImg, setUserImg] = useState(user);
+
+  // Name input
+  const [nameInput, setNameInput] = useState("");
+  const [nameValidStatus, setNameValidStatus] = useState(false);
+
+  useEffect(() => {
+    let [validValue, validStatus] = nameValidator(nameInput);
+
+    setNameInput(validValue);
+    validStatus ? setNameValidStatus(true) : setNameValidStatus(false);
+  }, [nameInput]);
+
+  let nameClass = classNames("auth-forms__item", {
+    succsess: nameValidStatus,
+    danger: !nameValidStatus,
+  });
+
+  // Phone input
   const [phoneInput, setPhoneInput] = useState("");
+  const [phoneValidStatus, setPhoneValidStatus] = useState(false);
+
+  useEffect(() => {
+    let [validValue, validStatus] = phoneValidator(phoneInput);
+
+    setPhoneInput(validValue);
+    validStatus ? setPhoneValidStatus(true) : setPhoneValidStatus(false);
+  }, [phoneInput]);
+
+  let phoneClass = classNames("auth-forms__item", {
+    succsess: phoneValidStatus,
+    danger: !phoneValidStatus,
+  });
+
+  // Date input
   const [dateInput, setDateInput] = useState("");
   const [dateIsActive, setDateIsActive] = useState(false);
   const [dateValidStatus, setDateValidStatus] = useState(false);
 
-  const birthdayInput = useRef(null);
-
-  useEffect(() => {
-    setPhoneInput(phoneValidator(phoneInput));
-  }, [phoneInput]);
+  const dateInstance = useRef(null);
 
   useEffect(() => {
     dateValidator(dateInput)
@@ -66,10 +96,12 @@ const AuthPage = () => {
           </div>
 
           <input
-            className="auth-forms__item"
+            className={nameClass}
             type="text"
             placeholder="Введите имя"
-            maxLength={40}
+            maxLength={30}
+            value={nameInput}
+            onInput={(e) => setNameInput(e.target.value)}
           />
 
           <div className="auth-forms__label">
@@ -100,7 +132,7 @@ const AuthPage = () => {
             <button
               className="auth-forms__item auth-forms__item--button"
               onClick={() => {
-                birthdayInput.current.click();
+                dateInstance.current.click();
                 setDateIsActive(true);
               }}
             >
@@ -110,14 +142,14 @@ const AuthPage = () => {
             <input
               className={dateClass}
               type="date"
-              ref={birthdayInput}
+              ref={dateInstance}
               value={dateInput}
               onInput={(e) => setDateInput(e.target.value)}
             />
           </label>
 
           <input
-            className="auth-forms__item"
+            className={phoneClass}
             type="tel"
             placeholder="Укажите номер телефона"
             value={phoneInput}

@@ -33,8 +33,9 @@
       border: 1px solid #C9C9C9;
       border-radius: 8px;
 
+      transition: all .3s linear;
+
       &--button {
-        
         text-align: left;
 
         background: inherit;
@@ -55,22 +56,21 @@
         opacity: 0;
 
         background-color: #fff;
-        transition: all .3s linear;
-
+        
         -webkit-appearance: none;
 
         &.active {
           width: 100%;
           opacity: 1;
         }
+      }
 
-        &.danger {
-          border-color: red;
-        }
+      &.danger {
+        border-color: red;
+      }
 
-        &.succsess {
-          border-color: green;
-        }
+      &.succsess {
+        border-color: green;
       }
     }
 
