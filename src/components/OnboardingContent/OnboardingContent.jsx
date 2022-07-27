@@ -6,14 +6,14 @@ import "./OnboardingContent.scss";
 // Images
 import image1 from "@Assets/images/image-1.png";
 
-const OnboardingContent = ({ children, imageUrl }) => {
+const OnboardingContent = ({ imageSrc, text }) => {
   return (
     <div className="onboarding-content">
       <div className="onboarding-content__img">
-        <img src={imageUrl || image1} />
+        <img src={imageSrc || image1} />
       </div>
 
-      <div className="onboarding-content__text">{children}</div>
+      <div className="onboarding-content__text">{text}</div>
     </div>
   );
 };

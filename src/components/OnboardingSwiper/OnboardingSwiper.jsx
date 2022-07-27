@@ -14,23 +14,44 @@ import OnboardingContent from "@Components/OnboardingContent";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, A11y } from "swiper";
-// import { EffectFade } from "swiper";
+import { Pagination, A11y, EffectFade } from "swiper";
 
 // Swiper styles
 import "swiper/scss";
 import "swiper/scss/pagination";
-// import "swiper/scss/effect-fade";
+import "swiper/scss/effect-fade";
 
 const OnboardingSwiper = ({ swiperRef, setIsLastSlide }) => {
+  const slides = [
+    {
+      id: 0,
+      imageSrc: image1,
+      text: "Авторизируйтесь и создавайте профили для своих близких, настраивая уровень заботы",
+    },
+    {
+      id: 1,
+      imageSrc: image2,
+      text: "Добавляйте препараты, выбирайте нужную дозировку и планируйте прием лекарств",
+    },
+    {
+      id: 2,
+      imageSrc: image3,
+      text: "Заходите в отчеты, чтобы отслеживать регулярность приема и делиться историей с врачами",
+    },
+    {
+      id: 3,
+      imageSrc: image4,
+      text: "Добавляйте больше профилей и подключайте автоматические звонки с премиум подпиской",
+    },
+  ];
+
   return (
     <Swiper
       className="onboarding__swiper"
       ref={swiperRef}
       // install Swiper modules
-      modules={[Pagination, A11y]}
-      // effect="fade"
-      spaceBetween={100}
+      modules={[Pagination, A11y, EffectFade]}
+      effect="fade"
       slidesPerView={1}
       pagination
       // allowTouchMove={false}
@@ -40,30 +61,11 @@ const OnboardingSwiper = ({ swiperRef, setIsLastSlide }) => {
           : setIsLastSlide(false)
       }
     >
-      <SwiperSlide>
-        <OnboardingContent imageUrl={image1}>
-          Авторизируйтесь и создавайте профили для своих близких, настраивая
-          уровень заботы
-        </OnboardingContent>
-      </SwiperSlide>
-      <SwiperSlide>
-        <OnboardingContent imageUrl={image2}>
-          Добавляйте препараты, выбирайте нужную дозировку и планируйте прием
-          лекарств
-        </OnboardingContent>
-      </SwiperSlide>
-      <SwiperSlide>
-        <OnboardingContent imageUrl={image3}>
-          Заходите в отчеты, чтобы отслеживать регулярность и делиться историей
-          приема препаратов с врачами
-        </OnboardingContent>
-      </SwiperSlide>
-      <SwiperSlide>
-        <OnboardingContent imageUrl={image4}>
-          Добавляйте больше профилей и подключайте автоматические звонки с
-          премиум подпиской
-        </OnboardingContent>
-      </SwiperSlide>
+      {slides.map((slide) => (
+        <SwiperSlide key={slide.id}>
+          <OnboardingContent text={slide.text} imageSrc={slide.imageSrc} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
