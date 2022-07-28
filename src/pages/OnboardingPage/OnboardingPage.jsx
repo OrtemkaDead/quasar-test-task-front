@@ -18,14 +18,8 @@ const OnboardingPage = () => {
       classNameHeader={"onboarding__header"}
       classNameContent={"onboarding__content"}
       headerSlot={
-        <Button
-          onClick={() =>
-            swiperRef.current.swiper.slideTo(
-              swiperRef.current.swiper.slides.length - 1
-            )
-          }
-        >
-          {isLastSlide ? "" : "Пропустить"}
+        <Button>
+          <Link to="/createProfile">{isLastSlide ? "" : "Пропустить"}</Link>
         </Button>
       }
       contentSlot={
@@ -47,9 +41,7 @@ const OnboardingPage = () => {
               }
             >
               {isLastSlide ? (
-                <Link className="onboarding__link" to="/auth">
-                  Начать пользоваться
-                </Link>
+                <Link to="/createProfile">Начать пользоваться</Link>
               ) : (
                 "Продолжить"
               )}

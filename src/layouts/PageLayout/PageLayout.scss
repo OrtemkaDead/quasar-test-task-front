@@ -6,8 +6,30 @@
   &__header {
     width: 100%; height: 64px;
     padding: 0 20px;
-    display: flex;
+  }
+
+  &-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "left-side center-side center-side right-side";
     align-items: center;
+
+    &__left-side {
+      grid-area: left-side;
+      justify-self: start;
+    }
+
+    &__center-side {
+      grid-area: center-side;
+      justify-self: center;
+    }
+
+    &__right-side {
+      grid-area: right-side;
+      justify-self: end;
+    }
   }
 
   &__content {

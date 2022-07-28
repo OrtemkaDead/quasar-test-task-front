@@ -1,19 +1,17 @@
-.auth {
+.create-profile {
   &__header {
-    @include flexible(center, space-between, row);
-
     background-color: $clr-light-grey;
     border: 1px solid #DEDEDE;
 
     & span {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
     }
   }
 
   &-forms {
     &__img {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       @include flexible(center, center, row);
 
       img {

@@ -7,12 +7,13 @@ import Button from "@Components/Button";
 // Images
 import plus from "@Assets/images/plus.svg";
 import check from "@Assets/images/check.svg";
-import user from "@Assets/images/user.png";
+import userMan from "@Assets/images/user-man.svg";
 import userWoman from "@Assets/images/user-woman.svg";
-import userMan from "@Assets/images/user-man.png";
+import userGrandma from "@Assets/images/user-grandma.svg";
+import userGrandfa from "@Assets/images/user-grandfa.svg";
 
 // Styles
-import "./AuthPage.scss";
+import "./CreateProfilePage.scss";
 
 // Scripts
 import phoneValidator from "@Utils/validators/phoneValidator";
@@ -21,8 +22,8 @@ import nameValidator from "@Utils/validators/nameValidator";
 
 let classNames = require("classnames");
 
-const AuthPage = () => {
-  const [userImg, setUserImg] = useState(user);
+const CreateProfilePage = () => {
+  const [userImg, setUserImg] = useState(userMan);
 
   // Name input
   const [nameInput, setNameInput] = useState("");
@@ -35,7 +36,7 @@ const AuthPage = () => {
     validStatus ? setNameValidStatus(true) : setNameValidStatus(false);
   }, [nameInput]);
 
-  let nameClass = classNames("auth-forms__item", {
+  let nameClass = classNames("create-profile-forms__item", {
     succsess: nameValidStatus,
     danger: !nameValidStatus,
   });
@@ -51,7 +52,7 @@ const AuthPage = () => {
     validStatus ? setPhoneValidStatus(true) : setPhoneValidStatus(false);
   }, [phoneInput]);
 
-  let phoneClass = classNames("auth-forms__item", {
+  let phoneClass = classNames("create-profile-forms__item", {
     succsess: phoneValidStatus,
     danger: !phoneValidStatus,
   });
@@ -69,56 +70,56 @@ const AuthPage = () => {
       : setDateValidStatus(false);
   }, [dateInput]);
 
-  let dateClass = classNames("auth-forms__item auth-forms__item--date", {
-    active: dateIsActive,
-    succsess: dateValidStatus,
-    danger: !dateValidStatus,
-  });
+  let dateClass = classNames(
+    "create-profile-forms__item create-profile-forms__item--date",
+    {
+      active: dateIsActive,
+      succsess: dateValidStatus,
+      danger: !dateValidStatus,
+    }
+  );
 
   return (
     <PageLayout
-      classNameHeader="auth__header"
-      headerSlot={
-        <>
-          <Button>
-            <img src={plus} />
-          </Button>
-          <span>Создание профиля</span>
-          <Button>
-            <img src={check} />
-          </Button>
-        </>
+      classNameHeader="create-profile__header"
+      headerCenterSideSlot={<span>Создайте профиль</span>}
+      headerRightSideSlot={
+        <Button>
+          <img src={check} />
+        </Button>
       }
       contentSlot={
-        <div className="auth__forms auth-forms">
-          <div className="auth-forms__img">
+        <div className="create-profile__forms create-profile-forms">
+          <div className="create-profile-forms__img">
             <img src={userImg} />
           </div>
 
           <input
             className={nameClass}
             type="text"
-            placeholder="Введите имя"
+            placeholder="Имя*"
             maxLength={30}
             value={nameInput}
             onInput={(e) => setNameInput(e.target.value)}
           />
 
-          <div className="auth-forms__label">
-            <label className="auth-forms__gender">
+          <div className="create-profile-forms__label">
+            <label className="create-profile-forms__gender">
               <input
-                className="auth-forms__item--radio"
+                className="create-profile-forms__item--radio"
                 type="radio"
                 name="sex"
                 value="men"
+                //! появляется баг с этим чеком
+                // checked="checked"
                 onChange={() => setUserImg(userMan)}
               />
               <span>Мужчина</span>
             </label>
 
-            <label className="auth-forms__gender">
+            <label className="create-profile-forms__gender">
               <input
-                className="auth-forms__item--radio"
+                className="create-profile-forms__item--radio"
                 type="radio"
                 name="sex"
                 value="women"
@@ -128,9 +129,9 @@ const AuthPage = () => {
             </label>
           </div>
 
-          <label className="auth-forms__label">
+          <label className="create-profile-forms__label">
             <button
-              className="auth-forms__item auth-forms__item--button"
+              className="create-profile-forms__item create-profile-forms__item--button"
               onClick={() => {
                 dateInstance.current.click();
                 setDateIsActive(true);
@@ -161,4 +162,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default CreateProfilePage;
